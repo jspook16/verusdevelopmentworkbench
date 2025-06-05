@@ -1,0 +1,6 @@
+Run   [npm run dev   from] /Projects/Cursor
+
+
+Windows: %APPDATA%\Cursor\User\workspaceStorage
+macOS: ~/Library/Application Support/Cursor/User/workspaceStorage
+Linux: ~/.config/Cursor/User/workspaceStorage

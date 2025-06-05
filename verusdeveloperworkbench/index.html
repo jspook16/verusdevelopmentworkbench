@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verus Developer Workbench</title>
+    <style>
+      /* Pulse animation for lottery drawing */
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(255, 235, 59, 0.7);
+        }
+        70% {
+          transform: scale(1.1);
+          box-shadow: 0 0 0 10px rgba(255, 235, 59, 0);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(255, 235, 59, 0);
+        }
+      }
+
+      /* Global styles for react-split gutters */
+      .gutter {
+        background-color: #444; /* Dark grey gutter */
+        background-repeat: no-repeat;
+        background-position: 50%;
+      }
+      .gutter.gutter-horizontal {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg=='); /* Simple dot pattern for horizontal */
+        cursor: col-resize;
+        height: 100%; /* Ensure gutter takes full height in horizontal splits */
+        width: 6px; /* Gutter width */
+        border-left: 1px solid #555;
+        border-right: 1px solid #555;
+      }
+      .gutter.gutter-vertical {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII='); /* Simple dot pattern for vertical */
+        cursor: row-resize;
+        width: 100%; /* Ensure gutter takes full width in vertical splits */
+        height: 6px; /* Gutter height */
+        border-top: 1px solid #555;
+        border-bottom: 1px solid #555;
+      }
+      .split {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        overflow-y: auto;
+        overflow-x: hidden; 
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/main.jsx"></script>
+  </body>
+</html> 

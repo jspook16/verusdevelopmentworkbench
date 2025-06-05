@@ -1,0 +1,22 @@
+{
+  "name": "testid@",
+  "contentmultimap": {
+    "iMvTg2HGhKKGYMqtapvRyfZNahbzmD9R3b": [
+      {
+        "i4GC1YGEVD21afWudGoFJVdnfjJ5XWnCQv": {
+          "objectdata": "0xDEADBEEF",
+          "mimetype": "text/plain",
+          "label": "iGrmDH3fdBx5yWjJzZZ1CpLZixBFi8Mr7u"
+        }
+      },
+      {
+        "i4GC1YGEVD21afWudGoFJVdnfjJ5XWnCQv": {
+          "objectdata": "0xCAFECAFE",
+          "mimetype": "text/plain",
+          "label": "iLtBtNLw95C2vXTjc83Ld8u5iR77Wg1RPU"
+        }
+      }
+    ]
+  },
+  "feeamount": 0.0001
+} 
