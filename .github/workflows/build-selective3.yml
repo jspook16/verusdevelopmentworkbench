@@ -1,0 +1,101 @@
+name: Build Electron App (Selective)
+
+on:
+  workflow_dispatch:
+    inputs:
+      build-linux:
+        description: 'Build Linux'
+        required: true
+        type: boolean
+        default: false
+      build-windows:
+        description: 'Build Windows'
+        required: true
+        type: boolean
+        default: false
+      build-macos:
+        description: 'Build macOS'
+        required: true
+        type: boolean
+        default: true
+
+jobs:
+  build-linux:
+    if: ${{ github.event.inputs.build-linux == 'true' }}
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build Linux app
+      run: npm run dist
+      
+    - name: Upload Linux artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: linux-build
+        path: |
+          dist/*.AppImage
+          dist/*.deb
+          dist/*.tar.gz
+
+  build-windows:
+    if: ${{ github.event.inputs.build-windows == 'true' }}
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build Windows app
+      run: npm run dist
+      
+    - name: Upload Windows artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: windows-build
+        path: |
+          dist/*.exe
+          dist/*.msi
+
+  build-macos:
+    if: ${{ github.event.inputs.build-macos == 'true' }}
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build macOS app
+      run: npm run dist
+      
+    - name: Upload macOS artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: macos-build
+        path: |
+          dist/*.dmg
+          dist/*.zip
+          dist/*.pkg
